@@ -4,6 +4,7 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+//Character strings for password generator to use
 const keyStrings = {
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -11,6 +12,7 @@ const keyStrings = {
   symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
 };
 
+//Defines what generatePassword function does
 function generatePassword() {
   var passwordCharSet = "";
 
