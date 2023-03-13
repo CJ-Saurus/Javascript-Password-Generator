@@ -11,5 +11,5 @@ Used Javascript to create a unique password with 8 to 128 characters
 
 ## Screenshots
 
-img src="./assets/images/Screenshot 2023-03-13 at 5.22.57 PM.png"
-img src="./assets/images/Screenshot 2023-03-13 at 5.23.28 PM.png"
+<img src="./assets/images/Screenshot 2023-03-13 at 5.22.57 PM.png"/>
+<img src="./assets/images/Screenshot 2023-03-13 at 5.23.28 PM.png"/>
