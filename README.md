@@ -9,6 +9,10 @@
 Added prompts for uppercase, lowercase, symbols and numbers
 Used Javascript to create a unique password with 8 to 128 characters
 
+## Website
+
+https://cj-saurus.github.io/Javascript-Password-Generator/
+
 ## Screenshots
 
 <img src="./assets/images/Screenshot 2023-03-13 at 5.22.57 PM.png"/>
