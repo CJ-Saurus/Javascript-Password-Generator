@@ -4,32 +4,45 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-var length = Number(prompt("Enter a password length between 8 and 128")),
-  charType = prompt("Enter a character type: special, numeric, uppercase, lowercase."),
-  password = generatePassword();
-document.getElementById("display").value = password;
-document.getElementById('copy-btn').addEventListener('click', copyPassword);
+const keyStrings = {
+  lowercase: 'abcdefghijklmnopqrstuvwxyz',
+  uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  number: '0123456789',
+  symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
+};
 
 function generatePassword() {
-  var charSets = {
-    lowercase: 'abcdefghijklmnopqrstuvwxyz',
-    uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    numeric: '0123456789',
-    special: ' !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+  var passwordCharSet = "";
+
+  var length = window.prompt("Enter a number from 8 to 128 for password length.");
+
+  var lowercase = window.confirm("Would you like to use lowercase letters?");
+  if (lowercase) {
+    passwordCharSet += keyStrings.lowercase;
   };
-  var charSet = charSets[charType.toLowerCase()] || charSets.lowercase;
-  var retVal = "";
-  for (var i = 0; i < length; i++) {
-    retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
+
+  var uppercase = window.confirm("Would you like to use uppercase letters?");
+  if (uppercase) {
+    passwordCharSet += keyStrings.uppercase;
+  };
+
+  var symbols = window.confirm("Would you like to use symbols?");
+  if (symbols) {
+    passwordCharSet += keyStrings.symbol;
+  };
+
+  var numbers = window.confirm("Would you like to use numbers?");
+  if (numbers) {
+    passwordCharSet += keyStrings.number;
+  };
+  var password = "";
+  for (let i = 0; i < length; i++) {
+    password += passwordCharSet[Math.floor(Math.random() * passwordCharSet.length)]
   }
-  return retVal;
+  return password;
 }
 
-function copyPassword() {
-  document.getElementById("display").select();
-  document.execCommand("Copy");
-  alert("Password copied to clipboard!");
-}
+console.log(generatePassword());
 
 // Write password to the #password input
 function writePassword() {
